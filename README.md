@@ -1,7 +1,7 @@
 # siteblocker
 *Mini-project to get me to learn French (yes it's roundabout).*
 
-:dart: **Goal:** block social media sites until I've reached my Duolingo french XP goal for the day.
+**Goal:** block social media sites until I've reached my Duolingo french XP goal for the day.
 
 **To Do:**
 * Create add_site/remove_site methods.
