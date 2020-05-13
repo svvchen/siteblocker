@@ -1,5 +1,5 @@
 # siteblocker
-**Goal:** Block social media sites until I've reached my Duolingo french XP goal for the day.
+Block social media sites until I've reached my Duolingo french XP goal for the day.
 
 **To Do:**
 * Create add_site/remove_site methods.
