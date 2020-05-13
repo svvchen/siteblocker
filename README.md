@@ -1,5 +1,5 @@
 # siteblocker
-Mini-project to get me to learn French (yes it's roundabout).
+*Mini-project to get me to learn French (yes it's roundabout).*
 
 :dart: **Goal:** block social media sites until I've reached my Duolingo french XP goal for the day.
 
