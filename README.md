@@ -9,4 +9,6 @@ Mini-project to get me to learn French (yes it's roundabout). Goal: block social
 * Create functions to check on my Duolingo xp progress via their API endpoints.
 
 **Done:**
-* Created a check_block function that blocks websites based on the hosts file.
+* Created a check_block function that blocks websites based on the hosts file (let the pain begin).
+
+![Blocked_Facebook](https://github.com/svvchen/siteblocker/blob/master/PR_1_Ss.png)
