@@ -45,7 +45,7 @@ def check_block(status):
 
         os.system('sudo mv /tmp/etc_hosts.tmp /etc/hosts')
 
-check_block(False)
-#check_block(True)
-test_file = open('/etc/hosts', 'rt')
-print(test_file.read())
+# check_block(False)
+# check_block(True)
+# test_file = open('/etc/hosts', 'rt')
+# print(test_file.read())
