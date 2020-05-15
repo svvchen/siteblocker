@@ -20,4 +20,4 @@ Blocking FB via hosts file:
 ![Blocked_Facebook](https://github.com/svvchen/siteblocker/blob/master/PR_1_Ss.png)
 
 Retrieving the daily Duolingo xp, boolean on goal reached:
-![Duolingo xp data](https://github.com/svvchen/siteblocker/blob/master/PR_1_Ss.png)
+![Duolingo xp data](https://github.com/svvchen/siteblocker/blob/master/PR_3_Ss.png)
