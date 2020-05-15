@@ -5,6 +5,7 @@ Block social media sites until I've reached my Duolingo french XP goal for the d
 * Create add_site/remove_site methods.
   * Only available upon hitting daily xp. :)
 * Write up a cron job to run this thing as soon as I open my laptop for maximum pain (uh I mean French learning motivation).
+* Create a user/pass secrets file so I don't need to ever worry about pushing my user/pass to GH.
 
 **In Progress:**
 * Link up `check_goal_reached` and the `check_block`.
