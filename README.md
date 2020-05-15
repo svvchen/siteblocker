@@ -8,7 +8,7 @@ Block social media sites until I've reached my Duolingo french XP goal for the d
 
 **In Progress:**
 * Link up `check_goal_reached` and the `check_block`.
-* Rename `check_block` --> `action_block`. It's not really checking, so much as adding/removing the block.
+* Rename `check_block` &rightarrow; `action_block`. It's not really checking, so much as adding/removing the block.
 
 **Done:**
 * Created a `check_block` function that blocks websites based on the hosts file (let the pain begin).
