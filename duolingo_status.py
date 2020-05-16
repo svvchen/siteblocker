@@ -1,12 +1,17 @@
 import duolingo
 import time
 from datetime import datetime
+import secrets
 
-# log in
-lingo = duolingo.Duolingo('[your username here]', '[your password here]')
+# tests
+# -----
+# create an instance of duolingo, pass it auth
+# print(secrets.username)
+lingo = duolingo.Duolingo(secrets.username, secrets.password)
 
 # set your daily goal
-daily_goal = 50
+# daily_goal = 10
+# -----
 
 def check_goal_reached(duolingo, goal):
 
@@ -26,9 +31,15 @@ def check_goal_reached(duolingo, goal):
         if lesson_localized_date == current_date:
             lesson_xp += lesson['xp']
 
+    print(lesson_xp)
+
     if lesson_xp > goal:
         return True
     else:
         return False
 
+# tests
+# -----
 # print(check_goal_reached(lingo, daily_goal))
+# print(lingo.get_daily_xp_progress())
+# -----
