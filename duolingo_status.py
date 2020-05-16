@@ -6,8 +6,7 @@ import secrets
 # tests
 # -----
 # create an instance of duolingo, pass it auth
-# print(secrets.username)
-lingo = duolingo.Duolingo(secrets.username, secrets.password)
+# lingo = duolingo.Duolingo(secrets.username, secrets.password)
 
 # set your daily goal
 # daily_goal = 10
