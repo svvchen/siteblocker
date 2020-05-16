@@ -20,23 +20,23 @@ Blocks social media sites until I've reached my Duolingo french XP goal for the 
 ## Progress screenshots
 **Blocking FB via hosts file:**
 
-![Blocked_Facebook](https://github.com/svvchen/siteblocker/blob/master/PR_1_Ss.png)
+![Blocked_Facebook](https://github.com/svvchen/siteblocker/blob/master/images/PR_1_Ss.png)
 
 **Blocking YT with Duolingo API**
 <details>
  <summary>Blocked...</summary>
- 
- ![Blocked](https://github.com/svvchen/siteblocker/blob/master/Blocked.png)
+
+ ![Blocked](https://github.com/svvchen/siteblocker/blob/master/images/Blocked.png)
 </details>
 
 <details>
  <summary>Working...</summary>
- 
- ![Work](https://github.com/svvchen/siteblocker/blob/master/Work.png)
+
+ ![Work](https://github.com/svvchen/siteblocker/blob/master/images/Work.png)
 </details>
 
 <details>
  <summary>Play!</summary>
- 
- ![Play](https://github.com/svvchen/siteblocker/blob/master/Play.png)
+
+ ![Play](https://github.com/svvchen/siteblocker/blob/master/images/Play.png)
 </details>
