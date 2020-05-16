@@ -19,8 +19,12 @@ Blocks social media sites until I've reached my Duolingo french XP goal for the 
 
 ## Progress screenshots
 **Blocking FB via hosts file:**
+<details>
+ <summary>Success...</summary>
 
-![Blocked_Facebook](https://github.com/svvchen/siteblocker/blob/master/images/PR_1_Ss.png)
+ ![Successful Block](https://github.com/svvchen/siteblocker/blob/master/images/PR_1_Ss.png)
+</details>
+
 
 **Blocking YT with Duolingo API**
 <details>
