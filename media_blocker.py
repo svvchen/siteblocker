@@ -1,7 +1,11 @@
 import time
-from datetime import datetime as dt
+from datetime import datetime
 import os
 import fileinput
+import re
+import duolingo_status
+import duolingo
+import secrets
 
 class Blocker:
     def __init__(self):
@@ -12,9 +16,20 @@ class Blocker:
         print("Current sites include:")
         print(self.blocked_sites)
 
-    def check_block(self, status):
+    def add_sites(self, new_site):
+
+        # basic website format validation
+        if re.match(r"www\..*.com", new_site):
+            self.blocked_sites.append(new_site)
+            print("Added " + new_site + " to blocked sites.")
+
+        else:
+            print("Invalid site format. Please input sites as 'www.insertsitename.com.'")
+
+    def action_block(self, status):
+
         # block
-        if status == True:
+        if status == False:
             with open('/etc/hosts', 'rt') as original_host_file:
                 copy_host_file = original_host_file.read()
                 with open('/tmp/etc_hosts.tmp', 'a+') as outf:
@@ -25,10 +40,11 @@ class Blocker:
                         # print(site)
                             pass
                         else:
-                            print(site)
+                            # print(site)
                             outf.write('\n' + '127.0.0.1' + " " + site)
 
                     os.system('sudo mv /tmp/etc_hosts.tmp /etc/hosts')
+
         # unblock
         else:
             with open('/etc/hosts', 'rt') as original_host_file:
@@ -50,5 +66,18 @@ class Blocker:
 
 new_blocker = Blocker()
 
+# tests
+# -----
 # new_blocker.current_sites()
-# new_blocker.check_block(False)
+# new_blocker.add_sites('www.9gag.com')
+# new_blocker.action_block(True)
+# -----
+
+# set daily goal
+daily_goal = 10
+
+# pass auth into instance of duolingo
+lingo = duolingo.Duolingo(secrets.username, secrets.password)
+
+# run the whole shebang
+new_blocker.action_block(duolingo_status.check_goal_reached(lingo, daily_goal))
