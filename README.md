@@ -6,7 +6,7 @@ Blocks social media sites until I've reached my Duolingo french XP goal for the 
   * Only available upon hitting daily xp. :)
 
 **In Progress:**
-* Write up a cron job to run this thing as soon as I open my laptop for maximum pain (uh I mean French learning motivation).
+* Write up a cron job to run this thing as soon as I open my laptop.
 * Debug the Duolingo API timezone bug that's consistently coming up.
 
 **Done:**
