@@ -1,5 +1,5 @@
 # siteblocker
-Block social media sites until I've reached my Duolingo french XP goal for the day.
+Blocks social media sites until I've reached my Duolingo french XP goal for the day.
 
 **To Do:**
 * Create add_site/remove_site methods.
@@ -21,3 +21,22 @@ Block social media sites until I've reached my Duolingo french XP goal for the d
 **Blocking FB via hosts file:**
 
 ![Blocked_Facebook](https://github.com/svvchen/siteblocker/blob/master/PR_1_Ss.png)
+
+**Blocking YT with Duolingo API**
+<details>
+ <summary>Blocked...</summary>
+ 
+ ![Blocked](https://github.com/svvchen/siteblocker/blob/master/Blocked.png)
+</details>
+
+<details>
+ <summary>Working...</summary>
+ 
+ ![Work](https://github.com/svvchen/siteblocker/blob/master/Work.png)
+</details>
+
+<details>
+ <summary>Play!</summary>
+ 
+ ![Play](https://github.com/svvchen/siteblocker/blob/master/Play.png)
+</details>
