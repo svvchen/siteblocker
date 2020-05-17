@@ -7,13 +7,10 @@ Blocks social media sites until I've reached my Duolingo french XP goal for the 
 
 **In Progress:**
 * Write up a cron job to run this thing as soon as I open my laptop and forever until I do my lessons.
-* Structure this repo properly (requirements.txt, main.py, etc.).
 
-**Done:**
-* Created a `check_block` function that blocks websites based on the hosts file (let the pain begin).
-* Create a blocker class that houses `check_block` and associated methods.
-* Create function to check on my Duolingo xp progress via their API endpoints.
-* Rename `check_block` &rightarrow; `action_block`. It's not really checking, so much as adding/removing the block.
+**(Recently) Done:**
+* Created a `action_block` function and associate class that blocks websites based on the hosts file (let the pain begin).
+* Create function to check on my Duolingo xp progress via Duolingo API endpoints.
 * Create a user/pass secrets file so I don't need to ever worry about pushing my user/pass to GH.
 * Replace the Duoling API checker with a selenium web scraper. The Duo API gives me really inconsistent xp data.
 
