@@ -1,44 +1,81 @@
-import duolingo
-import time
-from datetime import datetime
 import secrets
+import xvfbwrapper
 
-# tests
-# -----
-# create an instance of duolingo, pass it auth
-# lingo = duolingo.Duolingo(secrets.username, secrets.password)
+from selenium.webdriver.support import expected_conditions as EC
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from typing import List
+from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.firefox.options import Options
 
-# set your daily goal
-# daily_goal = 10
-# -----
+# pass in a goal
+def check_goal_reached(goal):
 
-def check_goal_reached(duolingo, goal):
+    # headless = no real chrome window!
+    options = webdriver.ChromeOptions()
+    options.headless = True
 
-    xp_json = duolingo.get_daily_xp_progress()
-    lessons_blob = xp_json['lessons_today']
+    # to get this to work on another machine
+    # you may need to just update the file path
+    browser = driver = webdriver.Chrome(options = options, executable_path='/Users/svvchen/Downloads/chromedriver')
 
-    lesson_xp = 0
-    current_date = datetime.today().date()
+    # open duolingo page
+    browser.get("https://www.duolingo.com/")
+    wait = WebDriverWait(browser, 20)
 
-    # duolingo's api endpoints return xp & lessons strangely
-    # xp & lessons carry over from previous days until a new
-    # lesson is completed, thus the below date validation
+    # Credit to DustinAlandzes for coming up
+    # with this login button mechanism. He
+    # waits for the page to load until he sees
+    # the login trigger.
 
-    for lesson in lessons_blob:
-        lesson_localized_date = datetime.fromtimestamp(lesson['time']).date()
+    login_button = wait.until(
+        EC.presence_of_element_located((By.XPATH, "//a[contains(text(), 'I ALREADY HAVE AN ACCOUNT')]"))
+    )
 
-        if lesson_localized_date == current_date:
-            lesson_xp += lesson['xp']
+    # once it's ready, click.
+    login_button.click()
 
-    print(lesson_xp)
+    # type in user + pass
+    username_field = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@placeholder='Email or username']")))
+    username_field.send_keys(secrets.username)
 
-    if lesson_xp > goal:
+    password_field = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@placeholder='Password']")))
+    password_field.send_keys(secrets.password)
+
+    # more logic to properly wait for page
+    # loads properly, first by storing the
+    # current login page url
+    current_url = driver.current_url
+
+    # initiate the new load
+    password_field.submit()
+
+    # then, comparing new url to old, and
+    # only proceeding once they're different
+    WebDriverWait(driver, 15).until(EC.url_changes(current_url))
+
+    # VERY weirdly, I can't find the element
+    # until I've refreshed after page load
+    browser.refresh()
+
+    # _3entt is the class name of the xp cmpnt
+    xp_element = browser.find_element_by_class_name('_3entt').text
+
+    # change 14/30 XP => "14" => 14
+    xp_string = xp_element.split("/")[0]
+    xp_int = int(xp_string)
+
+    print("Current xp: " + xp_string)
+
+    if xp_int > goal:
+        print("Goal reached!")
         return True
     else:
+        print("Goal not reached.")
         return False
 
-# tests
-# -----
-# print(check_goal_reached(lingo, daily_goal))
-# print(lingo.get_daily_xp_progress())
-# -----
+    browser.quit()
+
+check_goal_reached(50)
