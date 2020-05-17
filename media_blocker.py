@@ -3,8 +3,6 @@ from datetime import datetime
 import os
 import fileinput
 import re
-import duolingo_status
-import duolingo
 import secrets
 
 class Blocker:
@@ -64,7 +62,8 @@ class Blocker:
 
             os.system('sudo mv /tmp/etc_hosts.tmp /etc/hosts')
 
-new_blocker = Blocker()
+if __name__ == "__main__":
+    new_blocker = Blocker()
 
 # tests
 # -----
@@ -72,12 +71,3 @@ new_blocker = Blocker()
 # new_blocker.add_sites('www.9gag.com')
 # new_blocker.action_block(True)
 # -----
-
-# set daily goal
-daily_goal = 10
-
-# pass auth into instance of duolingo
-lingo = duolingo.Duolingo(secrets.username, secrets.password)
-
-# run the whole shebang
-new_blocker.action_block(duolingo_status.check_goal_reached(lingo, daily_goal))

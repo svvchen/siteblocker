@@ -77,5 +77,6 @@ def check_goal_reached(goal):
 
     browser.quit()
 
-# test
-# check_goal_reached(50)
+if __name__ == "__main__":
+    goal = input("Input a goal xp number: ")
+    check_goal_reached(int(goal))
