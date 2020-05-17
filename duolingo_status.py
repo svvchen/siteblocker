@@ -78,4 +78,5 @@ def check_goal_reached(goal):
 
     browser.quit()
 
-check_goal_reached(50)
+# test
+# check_goal_reached(50)
